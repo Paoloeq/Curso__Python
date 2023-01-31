@@ -104,4 +104,60 @@ for indice,valor in enumerate(nombres):
 # 1:Marlon
 # 2:Mario
 ```
+## Clase 3 : Separando secuencias (Listas)
+
+Extraer elementos de una lista
+```py
+potencias2=[2,4,8,16,32,64,128,264]
+print(potencias2[3:5])
+print(potencias2[:5])
+print(potencias2[3:])
+print(potencias2[:])
+print(potencias2[::2])
+print(potencias2[::-3])
+```
+
+
+Cambiar elementos de una lista
+```py
+potencias2[0:3]=['dos','cuatro','ocho']
+print(potencias2[:])
+print(id(potencias2))
+```
+
+Poner valores vacios en la lista
+```py
+potencias2[0:2]=[]
+print(potencias2)
+```
+
+Obtener un IDENTIFICADOR de la lista
+```py
+id(potencias2)
+print(id(potencias2))
+```
+
+Borrar elementos de una lista (Del)
+
+
+```py
+multiplos10= list(range(0,100,10))
+print(multiplos10)
+
+#borrar elelmentos desde la posición 3-6
+del multiplos10[3:6]
+print(multiplos10)
+
+#borrar con un tamaño de paso
+multiplos10_2 = list(range(0,100,10))
+del multiplos10_2[::2]
+print(multiplos10_2)
+
+#borrar la lista completa
+del multiplos10_2[:]
+print(multiplos10_2)
+```
+
+
+
 
