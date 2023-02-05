@@ -249,3 +249,86 @@ for edad4 in range (15,25):
 # La edad 24 se repite 0 veces
 
 ```
+### Invertir el orden de una lista
+```py
+vegetales = ['lechuga','espinaca','apio','pepinillo']
+print(vegetales.reverse())
+#['pepinillo', 'apio', 'espinaca', 'lechuga']
+```
+
+### Copiar una lista
+```py
+copia_vegetales = vegetales.copy()
+print(copia_vegetales)
+#['pepinillo', 'apio', 'espinaca', 'lechuga']
+```
+## Clase 5: Compresion de listas
+
+```py
+#Ejercicio 1: Conjunto de valores en una lista
+##Metodo normal
+lista=[]
+for dato in range (0,10):
+    lista.append(dato)
+
+print(lista)
+
+##Metodo Compresión de listas
+lista1=[dato for dato in range (0,10)]
+print(lista1)
+
+##Utilizando comando list
+lista2=list(range(0,10))
+print(lista2)
+
+```
+Poner cubos en una lista
+```py
+#Ejercicio 2: Pooner los cubos en una lista usando "Comprension de lista"
+cua2=[num**3 for num in range (0,10)]
+print(cua2)
+print(id(cua2))
+```
+Poner condicionales en una lista
+```py
+#Ejercicio 3: Poner condicionales 
+cua2=[num**2 for num in range (0,10)  if num**2<50]
+print(cua2)
+```
+Transformar de minuscualas a  mayususcuala en una lista
+```py
+lista=['Camisa', 'Panatalon', 'Buzo']
+lista2=[dato.uper() for dato in range lista]
+```
+## Clase 6: Generador de expresiones , filter
+Generador de expsiones nos permite no consumir recursos en memoria, cuando se desea tenere una lista.
+
+Ejemplo:
+
+```py
+#Generador de Expresiones
+lista = [-2,-1,0,1,2,3,4,5,6]
+cuadrados_pares=(x**2 for x in lista if x%2==0 )
+print(cuadrados_pares)
+#<generator object <genexpr> at 0x00000211DC4B42B0>
+
+#Para obtener la lista, hago el llamado
+print(list(cuadrados_pares))
+#[4, 0, 4, 16, 36]
+```
+## Clase 7: Filter and Map
+### Filter:
+The function of "Filter" is Filter in dates list 
+Example:
+
+```py
+numeros =(dato for dato in range(1,20))
+
+def pares(x):
+    return x%2==0
+
+numeros_pares = list(filter(pares,numeros))
+print(numeros_pares)
+
+#[2, 4, 6, 8, 10, 12, 14, 16, 18]
+```
