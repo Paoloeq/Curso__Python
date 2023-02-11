@@ -332,3 +332,58 @@ print(numeros_pares)
 
 #[2, 4, 6, 8, 10, 12, 14, 16, 18]
 ```
+
+Map:
+The function map is transforms the values por others.
+
+Lambda:
+Lambda is a function that it not has name. It use for to do simple operations.
+```py
+#lambda
+num = ( x for x in range (1,20))
+
+num_pares = list(filter(lambda i: i%2==0,num))
+print(num_pares)
+
+#map
+
+multi3 =list(map( lambda m: m*3, num_pares))
+
+print(multi3)
+```
+
+
+## Clase 8: Lists two dimensions
+```py
+lista = [[1,2,3],[4,5,6],[7,8,9]]
+#cada grupo representa una fila
+```
+## Clase 9: Matplotlip and seaborn
+They are libraries that help us to graph, 
+```py
+#importar librerias
+import matplotlib.pyplot as plt
+import numpy as np
+import random
+import seaborn as sns
+```
+Codigo para hacer una grafica de barras 
+```py
+tirosdados =[random.randrange(1,7) for i in range(600)]
+valores , frecuencias = np.unique(tirosdados, return_counts=True)
+titulo = f'Resultados de tirar los dados {len(tirosdados)} veces'
+sns.set_style('whitegrid')
+axes = sns.barplot(x=valores, y=frecuencias, palette ='bright')
+
+axes.set_title(titulo)
+axes.set(xlabel ="Valores", ylabel = "Frecuencias")
+axes.set_ylim(top=max(frecuencias)*1.10)
+
+for bar, frecuencias in zip(axes.patches, frecuencias):
+    text_x=bar.get_x()+bar.get_width()/2.0
+    text_y=bar.get_height()
+    text = f'{frecuencias:,}\n{frecuencias/len(tirosdados):.3%}'
+    axes.text(text_x, text_y, text, fontsize=11, ha='center', va='bottom')
+```
+![grafica](Clase9_MatplotlipSeaborn/grafica.PNG)
+
