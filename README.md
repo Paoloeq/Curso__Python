@@ -387,3 +387,106 @@ for bar, frecuencias in zip(axes.patches, frecuencias):
 ```
 ![grafica](Clase9_MatplotlipSeaborn/grafica.PNG)
 
+## Clase 10: Diccionarios y Conjuntos
+Los diccionarios se podria decir que es omo una tupla que agrupa elementos en pares, es decir, OBJETO con su respectivo VALOR
+
+Ejemplo:
+
+```py
+nombre_usuario = {"laura":"la", "daniel":"da" ,"Alberto":"al", "Rogelio":"ro"}
+
+#{'laura': 'la', 'daniel': 'da', 'Alberto': 'al', 'Rogelio': 'ro'}
+
+edad_usuario={"laura":28,"daniel":31,"Alberto":27,"Rogelio":65}
+
+#{'laura': 28, 'daniel': 31, 'Alberto': 27, 'Rogelio': 65}
+```
+
+Número de parejas del diccionario:
+
+```py
+len(nombre_usuario)
+#4
+
+```
+Ejemplo: programa que nos diga en forma de oración "X tiene Y años" para cada uno de los 4 participantes. (Ej - Laura tiene 28 años cumplidos)
+
+```py
+for nombre,edad in edad_usuario.items():
+    print(f'{nombre} tiene {edad} de edad')
+
+# laura tiene 28 de edad
+# daniel tiene 31 de edad
+# Alberto tiene 27 de edad
+# Rogelio tiene 65 de edad
+
+```
+Acceder a un valor de un pbjeto en especifico del diccionario
+```py
+edad_usuario["laura"]
+# 28
+```
+Cambiar un valor en el diccionario
+
+```py
+edad_usuario['Rogelio']=35
+#{'laura': 28, 'daniel': 31, 'Alberto': 27, 'Rogelio': 35}
+```
+Para agregar nuevos elementos en el diccionario
+
+```py
+edad_usuario['Eva']=29
+
+#{'laura': 28, 'daniel': 31, 'Alberto': 27, 'Rogelio': 35, 'Eva': 29}
+```
+
+Para borrar un elemento del diccionario
+```py
+del edad_usuario['daniel']
+
+#{'laura': 28, 'Alberto': 27, 'Rogelio': 35, 'Eva': 29}
+```
+
+Obtener una valor con una mensjae de error si no lo encuentra
+
+```py
+edad_usuario.get('Pepe','NO hay en el diccionario')
+#'NO hay en el diccionario'
+```
+
+Obtener un booleano si está o no en el diccionario
+
+```py
+'Eva' in edad_usuario
+# True
+'Pepe' in edad_usuario
+# False
+```
+
+### Métodos de Diccionario
+
+* *name_dictionary*`.items()`  -> Obtener una lista y tuplas [(objeto,valor)] 
+* *name_dictionary*`.values()` -> Obtenemos los valores de de cada elemento del diccionario
+* *name_dictionary*`.keys()`  ->  Obtenemos las llaves de los elelemntos de un diccionario
+
+```py
+for nombre in sorted(edad_usuario.keys()):
+    print(nombre, end=", ")
+
+for edad in sorted(edad_usuario.values()):
+    print(edad, end=", ")
+
+list(sorted(edad_usuario.values()))
+list(sorted(edad_usuario.keys()))
+list(sorted(edad_usuario.items()))
+```
+
+### Compración entre diccionarios
+
+```py
+dictionario1 == dictionario2
+
+# true/ false
+```
+
+
