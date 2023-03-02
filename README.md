@@ -489,4 +489,89 @@ dictionario1 == dictionario2
 # true/ false
 ```
 
+### Compresión de Diccionarios
+
+Example: 
+If i want to change potitions {object:value} to {value,object}
+
+```py
+
+usuario_edad={edad:usuario for usuario,edad in usuario_edad.items()}
+#{28: 'Laura', 31: 'Daniel', 27: 'Alberto', 65: 'Rogelio'}
+
+```
+
+Put the average sales of each agent in a dictionary
+
+```py
+ventas_agentes= {'Laura': [12000, 10500, 9800, 11100], 'Daniel': [11000, 7800, 7200, 6500], 'Alberto': [11200, 9500, 10800, 10100]}
+
+Prom_ventas = {agente:sum(ventas)/len(ventas) for agente, ventas  in ventas_agentes.items()}
+
+Prom_ventas
+#{'Laura': 10850.0, 'Daniel': 8125.0, 'Alberto': 10400.0}
+```
+
+
+## Conjuntos
+
+```py
+animales={'gato','ratón','perro','garza','perico','perro','pato'}
+animales
+#{'garza', 'gato', 'pato', 'perico', 'perro', 'ratón'}
+```
+
+
+```py
+len(animales)
+#6
+```
+
+```py
+'gato' in animales
+#True
+'comida' in animales 
+#False
+```
+
+```py
+for animal in animales:
+    print(animal.upper(), end="," )
+
+#PERRO,PATO,GARZA,GATO,PERICO,RATÓN,
+```
+
+```py
+pares1=list(range(0,16,2))
+pares1
+
+#[0, 2, 4, 6, 8, 10, 12, 14]
+
+pares2=list(range(8,30,2))
+pares2
+
+#[8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28]
+
+set(pares1+pares2)
+
+#{0, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 22, 24, 26, 28}
+```
+
+```py
+texto = 'Un dragon tragon trago carbon y quedo panzon, ah que dragon tan tragon'
+
+set(texto.split())
+
+{'Un',
+ 'ah',
+ 'carbon',
+ 'dragon',
+ 'panzon,',
+ 'que',
+ 'quedo',
+ 'tan',
+ 'trago',
+ 'tragon',
+ 'y'}
+```
 
