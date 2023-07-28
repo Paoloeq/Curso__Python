@@ -495,7 +495,6 @@ Example:
 If i want to change potitions {object:value} to {value,object}
 
 ```py
-
 usuario_edad={edad:usuario for usuario,edad in usuario_edad.items()}
 #{28: 'Laura', 31: 'Daniel', 27: 'Alberto', 65: 'Rogelio'}
 
@@ -574,4 +573,44 @@ set(texto.split())
  'tragon',
  'y'}
 ```
+## CLASE 13: MANEJO DE ARCHIVOS 
+## Lectura de CSV con dataframes en Pandas
+### Importar Pandas y csv
+```py
+import pandas as pd
+datagym = pd.read_csv("Datos_Gimnasio.csv")
+```
+![grafica](Clase13_ManejoTextos/dataframeBefore.PNG)
 
+### Controlar decimales en la tabla
+```py
+pd.set_option("display.precision",1) # redeondea todos los numeros a un decimal
+```
+
+### Cambiar columnas del data frame
+```py
+datagym.columns=["Codigo","Genero","Peso","Cintura","Pulso","Lagartijas","Sentadillas","Saltos"]# cambiamos la cabecera "codigo user" por "Código"
+```
+![grafica](Clase13_ManejoTextos/dataframeAfter.PNG)
+
+### Datos estadisticos
+
+```py
+datagym.describe()
+```
+![grafica](Clase13_ManejoTextos/describe().PNG)
+
+### Datos estadisticos de campo particular
+
+```py
+(datagym.Genero == "F").describe()
+```
+![grafica](Clase13_ManejoTextos/describe-campoparticular.PNG)
+
+
+### Graficar con Matplolib
+```py
+import matplotlib.pyplot as plt
+histogram = datagym.hist()
+```
+![grafica](Clase13_ManejoTextos/histograma.PNG)
